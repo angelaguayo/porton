@@ -46,8 +46,32 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script>
+      function funcion(){
+        alert('<?php echo accion(); ?>');
+        
+        /* Escribir en el Documento*/
+        document.write('<?php echo accion(); ?>');
+        
+      }
+    </script>
 </head>
 <body>
-    <button class="button" style="vertical-align:middle"><span>Hover </span></button>
+    <button class="button" id="boton1" onclick = "funcion();" style="vertical-align:middle"><span>Hover </span></button>
+
+
+    <?php
+      funcion action{
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, 'https://maker.ifttt.com/trigger/porton-action/with/key/h8dEcQkIMhCjclCEfqJsOfa-g9UAAj1Bt9HGN2F2sUW'); 
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true); 
+        curl_setopt($ch, CURLOPT_HEADER, 0); 
+        $data = curl_exec($ch); 
+        curl_close($ch); 
+        echo $data; 
+      }
+    ?>
+
+    <!--curl -X POST https://maker.ifttt.com/trigger/porton-action/with/key/h8dEcQkIMhCjclCEfqJsOfa-g9UAAj1Bt9HGN2F2sUW-->
 </body>
 </html>
